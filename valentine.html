@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Paris Night Valentine 💌</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    background: radial-gradient(circle at top, #1b2a4e, #050914);
+    font-family: 'Segoe UI', sans-serif;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* 🌌 Stars */
+  .star {
+    position: fixed;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 3s infinite ease-in-out;
+  }
+
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; }
+    50% { opacity: 1; }
+  }
+
+  /* 🗼 Eiffel Tower glow */
+  .eiffel {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    font-size: 130px;
+    opacity: 0.25;
+    filter: drop-shadow(0 0 15px gold);
+    z-index: 1;
+  }
+
+  .card {
+    background: rgba(255,255,255,0.95);
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    width: 420px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+    position: relative;
+    z-index: 2;
+    color: #333;
+  }
+
+  h1 { color: #e63946; }
+  h2 { color: #d62828; }
+
+  .photos {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 15px 0;
+  }
+
+  .photos img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #ff6b6b;
+  }
+
+  button {
+    padding: 12px 26px;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px;
+  }
+
+  .yes {
+    background: #e63946;
+    color: white;
+  }
+
+  .no {
+    background: #adb5bd;
+    color: white;
+    position: absolute;
+  }
+
+  .response {
+    margin-top: 20px;
+    font-size: 20px;
+    color: #d62828;
+  }
+
+  /* 💖 Heart Rain */
+  .heart {
+    position: fixed;
+    top: -10px;
+    font-size: 20px;
+    color: #ff4d6d;
+    animation: fall linear infinite;
+    z-index: 1;
+  }
+
+  @keyframes fall {
+    to { transform: translateY(110vh); }
+  }
+
+  /* 💌 Love Letter */
+  .letter-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(5, 9, 20, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 1s ease;
+    z-index: 5;
+  }
+
+  .letter-overlay.show {
+    opacity: 1;
+    pointer-events: auto;
+  }
+
+  .letter {
+    background: #fffaf0;
+    color: #333;
+    padding: 35px;
+    border-radius: 20px;
+    max-width: 420px;
+    text-align: center;
+    box-shadow: 0 0 40px rgba(255,215,0,0.6);
+    animation: letterPop 1s ease;
+  }
+
+  @keyframes letterPop {
+    from { transform: scale(0.7); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+  }
+
+  .letter h2 {
+    color: #d62828;
+    margin-bottom: 15px;
+  }
+
+  .letter button {
+    margin-top: 20px;
+    padding: 10px 22px;
+    border: none;
+    border-radius: 25px;
+    background: #e63946;
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+  }
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 Background Music -->
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<!-- Eiffel -->
+<div class="eiffel">🗼</div>
+
+<div class="card">
+  <h1>Hey Mehul 💖</h1>
+
+  <div class="photos">
+    <img src="mehul.jpg">
+    <img src="priyanshi.jpg">
+  </div>
+
+  <p>
+    Under Paris night lights,<br>
+    my heart only looks for you ✨
+  </p>
+
+  <h2>Will you be my Valentine? 💌</h2>
+
+  <button class="yes" onclick="yesClicked()">Yes 💕</button>
+  <button class="no" id="noBt
